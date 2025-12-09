@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+
+    <!-- I found this code on W3School for making a slideshow and then altered it to make it fit as a background for my sketch.
+      Here is the link for that: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_rr -->
+      <style>
+      /* Make slides fill the whole screen */
+      .mySlides {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover; /* keeps aspect ratio, fills screen */
+        z-index: -1;       /* show behind everything, including canvas */
+      }
+
+      body {
+        margin: 0;
+        overflow: hidden; /* prevents scrollbars */
+        padding: 0; 
+        height: 100%; 
+        display: flex; 
+        justify-content: center; /* horizontal center */ 
+        align-items: center; /* vertical center */
+      }
+
+    </style>
+  </head>
+
+<body>
+
+  <!-- these are images I have taken over the past 3 years out in nature, I chose to use my own images for this -->
+<img class="mySlides" src="assets/nature01.jpeg">
+<img class="mySlides" src="assets/nature02.JPG">
+<img class="mySlides" src="assets/nature03.JPG">
+<img class="mySlides" src="assets/nature04.JPG">
+<img class="mySlides" src="assets/nature05.JPG">
+<img class="mySlides" src="assets/nature06.JPG">
+<img class="mySlides" src="assets/nature07.JPG">
+<!-- <img class="mySlides" src="assets/nature08.jpeg">
+<img class="mySlides" src="assets/nature09.jpeg">
+<img class="mySlides" src="assets/nature10.JPG"> for some reason these images did not seem to load in when I added them and they rendered a white background --> 
+<img class="mySlides" src="assets/nature11.png">
+
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 3000); // Change image every 3 seconds //
+}
+</script>
+
+
+    <script src="sketch.js"></script>
+  </body>
+</html>
